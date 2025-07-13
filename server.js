@@ -3,22 +3,19 @@ const cors = require('cors');
 const fs = require('fs');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
+// ✅ دي أهم خطوة: استخدم PORT من البيئة أو 3000 كافتراضي
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
-// ✅ تحميل القصص من ملف JSON
 let stories = require('./stories.json');
 
-// ✅ Get All Stories
 app.get('/', (req, res) => {
   res.send('🎉 Islamic Stories API is running');
 });
 
-
-// ✅ Like Story
 app.post('/stories/:id/like', (req, res) => {
   const storyId = parseInt(req.params.id);
   const story = stories.find(s => s.id === storyId);
@@ -31,7 +28,6 @@ app.post('/stories/:id/like', (req, res) => {
   }
 });
 
-// ✅ Unlike Story
 app.post('/stories/:id/unlike', (req, res) => {
   const storyId = parseInt(req.params.id);
   const story = stories.find(s => s.id === storyId);
