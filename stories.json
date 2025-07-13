@@ -1,0 +1,25 @@
+
+[
+  {
+    "id": 1,
+    "title": "حب النبي ﷺ لعائشة",
+    "category": "سيرة نبوية",
+    "image": "https://example.com/story1.jpg",
+    "content": "قصة حب النبي ﷺ لعائشة رضي الله عنها...",
+    "likes": 3,
+    "author": "فريق العمل",
+    "date": "2024-01-01T00:00:00.000Z",
+    "isLiked": false
+  },
+  {
+    "id": 2,
+    "title": "عمر بن الخطاب وزوجته",
+    "category": "خلفاء راشدين",
+    "image": "https://example.com/story2.jpg",
+    "content": "قصة عمر بن الخطاب وزوجته في الإسلام...",
+    "likes": 5,
+    "author": "فريق العمل",
+    "date": "2024-01-02T00:00:00.000Z",
+    "isLiked": false
+  }
+]
