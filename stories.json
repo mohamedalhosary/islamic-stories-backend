@@ -6,7 +6,7 @@
     "category": "سيرة نبوية",
     "image": "https://example.com/story1.jpg",
     "content": "قصة حب النبي ﷺ لعائشة رضي الله عنها...",
-    "likes": 3,
+    "likes": 0,
     "author": "فريق العمل",
     "date": "2024-01-01T00:00:00.000Z",
     "isLiked": false
@@ -17,7 +17,7 @@
     "category": "خلفاء راشدين",
     "image": "https://example.com/story2.jpg",
     "content": "قصة عمر بن الخطاب وزوجته في الإسلام...",
-    "likes": 5,
+    "likes": 0,
     "author": "فريق العمل",
     "date": "2024-01-02T00:00:00.000Z",
     "isLiked": false

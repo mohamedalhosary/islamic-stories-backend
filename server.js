@@ -4,18 +4,26 @@ const fs = require('fs');
 
 const app = express();
 
-// ✅ دي أهم خطوة: استخدم PORT من البيئة أو 3000 كافتراضي
+// استخدم المنفذ من متغيرات البيئة (لـ Railway) أو 3000 افتراضيًا
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
+// تحميل القصص من ملف JSON
 let stories = require('./stories.json');
 
+// نقطة اختبار للتأكد إن السيرفر شغال
 app.get('/', (req, res) => {
   res.send('🎉 Islamic Stories API is running');
 });
 
+// ✅ نقطة GET لعرض جميع القصص
+app.get('/stories', (req, res) => {
+  res.json(stories);
+});
+
+// POST: زيادة لايك
 app.post('/stories/:id/like', (req, res) => {
   const storyId = parseInt(req.params.id);
   const story = stories.find(s => s.id === storyId);
@@ -28,6 +36,7 @@ app.post('/stories/:id/like', (req, res) => {
   }
 });
 
+// POST: تقليل لايك
 app.post('/stories/:id/unlike', (req, res) => {
   const storyId = parseInt(req.params.id);
   const story = stories.find(s => s.id === storyId);
@@ -40,6 +49,7 @@ app.post('/stories/:id/unlike', (req, res) => {
   }
 });
 
+// تشغيل السيرفر
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
